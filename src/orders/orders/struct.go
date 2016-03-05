@@ -1,0 +1,51 @@
+package orders
+const (
+	getCart = `
+	select
+	ID,
+	USER_ID,
+	GOODS_ID,
+	GOODS_PRICE,
+	GOODS_NUM,
+	GOODS_IMG,
+	GOODS_NAME,
+	GOODS_URL,
+	SHOP_ID,
+	SHOP_NAME,
+	SHOP_URL,
+	SELLER_ID,
+	SELLER_NAME,
+	FROM_URL,
+	STATUS,
+	TIME
+ 	from o_cart WHERE USER_ID=?
+	`
+	insertOrders =`
+	INSERT INTO o_orders (ORD_NO,PUB_ORD_NO, USR_ID, SHOP_ID, SHOP_NAME, SHOP_URL, SELLER_ID, SELLER_NAME, ORD_TYPE, STATUS, FROM_URL, PRICE, CREATE_TIME,
+	 TIME, SYNC) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+	`
+	insertOrdersItem = `
+	INSERT INTO o_orders_item (ORD_ID, GOODS_PRICE, GOODS_ID, GOODS_NUM, GOODS_IMG, GOODS_NAME, GOODS_URL, STATUS, TIME) VALUES (?,?,?,?,?,?,?,?,?);
+	`
+	getDataSum_fromUrl = `
+	SELECT COUNT(ID) FROM o_orders WHERE USR_ID = ? and FROM_URL LIKE ? and -100<>?
+	`
+	getDataSum_fromUrlByStatus = `
+	SELECT COUNT(ID) FROM o_orders WHERE USR_ID = ? and FROM_URL LIKE ? and STATUS=?
+	`
+
+	getDataSum = `
+	SELECT COUNT(ID) FROM o_orders WHERE USR_ID = ? and STATUS<>70
+	`
+	getOrdersListByFromUrl = `
+	SELECT ID,ORD_NO,SHOP_ID,SHOP_NAME,SHOP_URL,SELLER_ID,SELLER_NAME,ORD_TYPE,STATUS,FROM_URL,PRICE,CREATE_TIME from o_orders
+ 	WHERE USR_ID = ? and FROM_URL LIKE ? and -100<>? ORDER BY ID DESC limit ?,?
+	`
+	getOrdersListByStatus = `
+	SELECT ID,ORD_NO,SHOP_ID,SHOP_NAME,SHOP_URL,SELLER_ID,SELLER_NAME,ORD_TYPE,STATUS,FROM_URL,PRICE,CREATE_TIME from o_orders
+ 	WHERE USR_ID = ? and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC limit ?,?
+	`
+	goodsUrl = `
+	SELECT ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL from o_orders_item WHERE ORD_ID = ? ORDER BY ID DESC
+	`
+)

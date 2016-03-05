@@ -1,0 +1,11 @@
+{
+  "WorkingDir": "D:\\PRO\\GO\\RCP_ORDERS",
+  "SourceDir": [
+    "D:\\PRO\\GO\\RCP_ORDERS\\src",
+    "D:\\PRO\\GO\\RCP_ORDERS\\conf"
+  ],
+  "SourceExt": ".go|.c|.cpp|.h|.properties",
+  "BuildCmd": "go build main",
+  "RunCmd": "main",
+  "Decreasing": 1
+}

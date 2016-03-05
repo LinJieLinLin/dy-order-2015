@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh_CN" ng-app="ordersApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>订单支付</title>
+    <link rel="stylesheet" href="libs/bootstrap3.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="common/css/common.css" type="text/css">
+    <link rel="stylesheet" href="orders/orders.css" type="text/css">
+
+    <script type="text/javascript" src="libs/angular-1.2.9/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angular-1.2.9/angular-resource.min.js"></script>
+    <!--<script type="text/javascript" src="libs/angular-1.2.9/angular-route.min.js"></script>-->
+    <script type="text/javascript" src="libs/jquery1.11.1/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap3.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="common/js/common.js"></script>
+    <script type="text/javascript" src="orders/orders.js"></script>
+</head>
+<body ng-controller="payCtrl">
+<div class="head">
+    <div class="head_body">
+        <div class="L" onclick="back()">
+            返回上一页
+        </div>
+        <div class="R">
+            <a href="/quitSystem">退出</a>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div class="cart_head">
+        <div class="logo">
+            <img src="imgs/dy_logo.png" alt="大洋"/>
+        </div>
+        <div class="logo_text">订单支付</div>
+        <div class="clean"></div>
+    </div>
+    <div class="cart_body">
+        <div class="pay_inf">
+            <div class="m_b10">
+                你正在支付
+            </div>
+            <div>
+                <div class="m_b10">
+                    <div class="L" ng-repeat="name in goodsName track by $index " style="">
+                        {{name}}
+                        <span ng-hide="$last"> | </span>
+                    </div>
+                    <div class="clean"></div>
+                    <div>
+                        等<span class="y_text">{{selectData.count}}</span>件商品
+                    </div>
+                </div>
+            </div>
+            <div class="L">
+                购买时间：{{time}}
+            </div>
+            <div class="R">
+                应付金额：<span class="y_text">{{selectData.price| currency:'￥'}}</span>
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div class="pay_select">
+            <div style="margin: 20px 20px;">
+                <div ng-click="pay()" class="btn alipay">
+                    <span style="color: #ffffff">支付宝支付</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "DB_CONFIG": "lin:123456@tcp(localhost:3306)/o?charset=utf8&loc=Local",
+  "TEST_DB_CONFIG": "lin:123456@tcp(localhost:3306)/oTest?charset=utf8",
+  "SERVER_PORT": "8001",
+  "LOG_PATH": "www/log/",
+  "LOG_FILE_NAME": "RCP.log",
+  "ALIPAY_NOTIFY_HOST": "http://orders.tmp.jxzy.com"
+}

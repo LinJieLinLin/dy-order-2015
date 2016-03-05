@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh_CN" ng-app="ordersApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>我的订单</title>
+    <link rel="stylesheet" href="libs/bootstrap3.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="common/css/common.css" type="text/css">
+    <link rel="stylesheet" href="orders/orders.css" type="text/css">
+
+    <script type="text/javascript" src="libs/angular-1.2.9/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angular-1.2.9/angular-resource.min.js"></script>
+    <script type="text/javascript" src="libs/jquery1.11.1/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap3.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="common/js/common.js"></script>
+    <script type="text/javascript" src="orders/orders.js"></script>
+    <script type="text/javascript" src="orders/viewOrders.js"></script>
+
+</head>
+<body ng-controller="viewOrdersCtrl">
+<div class="head">
+    <div class="head_body">
+        <div class="L" onclick="back()">
+            返回上一页
+        </div>
+        <div class="R">
+            <a href="/quitSystem">退出</a>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div ng-include="viewOrders"></div>
+</div>
+</body>
+</html>

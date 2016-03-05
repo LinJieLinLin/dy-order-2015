@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh_CN" ng-app="ordersApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+    <title>订单确认</title>
+    <link rel="stylesheet" href="libs/bootstrap3.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="common/css/common.css" type="text/css">
+    <link rel="stylesheet" href="orders/orders.css" type="text/css">
+
+    <script type="text/javascript" src="libs/angular-1.2.9/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angular-1.2.9/angular-resource.min.js"></script>
+    <!--<script type="text/javascript" src="libs/angular-1.2.9/angular-route.min.js"></script>-->
+    <script type="text/javascript" src="libs/jquery1.11.1/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap3.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="common/js/common.js"></script>
+    <script type="text/javascript" src="orders/orders.js"></script>
+</head>
+<body ng-controller="orderCtrl">
+<div class="head">
+    <div class="head_body">
+        <div class="L" onclick="back()">
+            返回上一页
+        </div>
+        <div class="R">
+            <a href="/quitSystem">退出</a>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div class="cart_head">
+        <div class="logo">
+            <img src="imgs/dy_logo.png" alt="大洋"/>
+        </div>
+        <div class="logo_text">确认订单</div>
+        <div class="clean"></div>
+    </div>
+    <div class="cart_body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table  cart_T">
+                        <thead>
+                        <tr>
+                            <th style="width: 60%">
+                                <span>资源名称</span>
+                            </th>
+                            <th style="width: 20%">
+                                <span>添加时间</span>
+                            </th>
+                            <th style="width: 10%">
+                                <span>数量</span>
+                            </th>
+                            <th style="width: 10%">
+                                <span>价格</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody ng-repeat="cart in cartData" ng-if="cart.haveSelect==true">
+                        <tr class="">
+                            <td height="15" class="gap-td" colspan="5"></td>
+                        </tr>
+                        <tr class="goods_title">
+                            <td class="" colspan="5">
+                                <div class="L" >
+                                    <label>
+                                        <span class="">店铺：</span>
+                                    </label>
+                                    <a class="" ng-href="{{cart.shopUrl}}" target="_blank">{{cart.shopName}}</a>
+                                </div>
+                                <div class="L" style="margin-left: 20px;">
+                                    <span class="">来源：</span>
+                                    <a ng-href="{{cart.fromUrl}}" target="_blank" class="">{{cart.fromUrlName}}</a>
+                                </div>
+                                <div class="L" style="margin-left: 20px;">
+                                    <span class="">
+                                    <!--<a chat="399459,123463" href="#" class="ng-isolate-scope">-->
+                                        <!--与卖家联系-->
+                                    <!--</a>-->
+                                    </span>
+                                </div>
+                                <div class="clean"></div>
+                            </td>
+                        </tr>
+                        <tr class="" ng-repeat="goods in cart.goods" ng-if="goods.isSelected==true">
+                            <td>
+                                <div class="L goods_img">
+                                    <a ng-href="{{goods.goodsUrl}}" target="_blank"><img
+                                            ng-src="{{goods.goodsImg}}"/></a>
+                                </div>
+                                <div class="L">
+                                    <a ng-href="{{goods.goodsUrl}}" target="_blank">{{goods.goodsName}}</a>
+                                </div>
+                                <div class="clean"></div>
+                            </td>
+                            <td>
+                                <div>
+                                    {{goods.time}}
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    {{goods.goodsNum}}
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <span class="y_text">{{goods.goodsPrice| currency:'￥'}}</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="goods_title">
+                            <td class="" colspan="5">
+                                <div class="R" style="margin:0 10px;">共<span
+                                        class="y_text">{{cart.price| currency:'￥'}}</span></div>
+                                <div class="R"><span class="y_text">{{cart.count}}</span>件商品</div>
+                                <div class="clean"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="R summit_order">
+            <div style="height: 34px;text-align: center;line-height: 34px;">
+                合计：
+                <span class="y_text">{{selectData.price| currency:'￥'}}</span>
+            </div>
+            <div ng-click="submitOrder()" class="btn submit_btn h3"><span style="color: #ffffff">提交订单</span></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

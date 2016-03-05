@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh_CN" ng-app="cartApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+    <title>购物车</title>
+    <link rel="stylesheet" href="libs/bootstrap3.0/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="common/css/common.css" type="text/css">
+    <link rel="stylesheet" href="cart/cart.css" type="text/css">
+
+    <script type="text/javascript" src="libs/angular-1.2.9/angular.min.js"></script>
+    <script type="text/javascript" src="libs/angular-1.2.9/angular-resource.min.js"></script>
+    <!--<script type="text/javascript" src="libs/angular-1.2.9/angular-route.min.js"></script>-->
+    <script type="text/javascript" src="libs/jquery1.11.1/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap3.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="common/js/common.js"></script>
+    <script type="text/javascript" src="cart/cart.js"></script>
+</head>
+<body ng-controller="cartCtrl">
+<div class="head">
+    <div class="head_body">
+        <div class="L" onclick="back()">
+            返回上一页
+        </div>
+        <div class="R">
+            <a href="/quitSystem">退出</a>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div class="cart_head">
+        <div class="logo">
+            <img src="imgs/dy_logo.png" alt="大洋"/>
+        </div>
+        <div class="logo_text">购物车</div>
+        <div class="clean"></div>
+    </div>
+    <div class="cart_body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <table class="table cart_T">
+                        <thead>
+                        <tr>
+                            <th style="width: 50%">
+                                <label class="L">
+                                    <input type="checkbox" ng-change="checkSelectAll()" ng-model="isSelectAll"
+                                           class="ng-pristine ng-valid">
+                                    全选
+                                </label>
+                                <span>资源名称</span>
+                            </th>
+                            <th style="width: 15%;">
+                                <span>添加时间</span>
+                            </th>
+                            <th style="width: 15%">
+                                <span>数量</span>
+                            </th>
+                            <th style="width: 10%">
+                                <span>价格</span>
+                            </th>
+                            <th style="width: 10%">
+                                <span>操作</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody data-ng-if="cartData.length!=0" ng-repeat="cart in cartData">
+                        <tr class="">
+                            <td height="15" class="gap-td" colspan="5"></td>
+                        </tr>
+                        <tr class="">
+                            <td style="text-align: left" colspan="5">
+                                <div class="L">
+                                    <label>
+                                        <input type="checkbox"
+                                               ng-model="cart.isSelected"
+                                               ng-change="checkSelectStoreAll(cart)"
+                                               class="">
+                                        <span class="">店铺：</span>
+                                    </label>
+                                    <a class="" ng-href="{{cart.shopUrl}}" target="_blank">{{cart.shopName}}</a>
+                                </div>
+                                <div class="L" style="margin-left: 20px;">
+                                    <span class="">
+                                    <!--<a chat="399459,123463" href="#" class="ng-isolate-scope">-->
+                                        <!--与卖家联系-->
+                                    <!--</a>-->
+                                    </span>
+                                </div>
+                                <div class="L" style="margin-left: 20px;">
+                                    <span class="">来源：</span>
+                                    <a ng-href="{{cart.fromUrl}}" target="_blank" class="">{{cart.fromUrlName}}</a>
+                                </div>
+                                <div class="clean"></div>
+                            </td>
+                        </tr>
+                        <tr class="" ng-repeat="goods in cart.goods">
+                            <td>
+                                <div class="L ">
+                                    <input type="checkbox" ng-model="goods.isSelected" ng-change="countPrice()">
+                                </div>
+                                <div class="L goods_img">
+                                    <a ng-href="{{goods.goodsUrl}}" target="_blank"><img
+                                            ng-src="{{goods.goodsImg}}"/></a>
+                                </div>
+                                <div class="L">
+                                    <a ng-href="{{goods.goodsUrl}}" target="_blank">{{goods.goodsName}}</a>
+                                </div>
+                                <div class="clean"></div>
+                            </td>
+                            <td>
+                                <div>
+                                    {{goods.time}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="BabyNum">
+                                    <a class="num_decrease" ng-click="changeCount('minusStatus',goods)">-</a>
+                                    <input type="text" name="goodsNum" class="goodsNum" size="5"
+                                           ng-model="goods.goodsNum" ng-change="inputCount(nowCount,myCartList)">
+                                    <a class="num_increase" ng-click="changeCount('addStatus',goods)">+</a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="y_text">
+                                    {{goods.goodsPrice| currency:'￥'}}
+                                </div>
+
+                            </td>
+                            <td>
+                                <div>
+                                    <a ng-click="rmGoods(goods)" class="re-but">移除</a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody data-ng-if="cartData.length==0">
+                        <tr>
+                            <td colspan="5" style="height: 100px;line-height: 100px;">
+                                暂无数据！
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr class="list_foot">
+                            <td>
+                                <div class="L">
+                                    <div class="L">
+                                        <label><input type="checkbox" ng-change="checkSelectAll()"
+                                                      ng-model="isSelectAll"
+                                                      class="ng-pristine ng-valid">
+                                            全选</label>
+                                    </div>
+                                    <!--<a ng-click="rmAllGoods()" class="L" style="margin: 0 10px;">移除</a>-->
+                                </div>
+                                <div class="clean"></div>
+                            </td>
+                            <td colspan="3">
+                                <div style="position: absolute;top:0;right: 10px;padding: 8px;width: 150%;text-align: right;">
+                                    <div class="R" style="min-width: 120px;">
+                                        合计：
+                                        <span class="y_text">{{selectData.price| currency:'￥'}} </span>
+                                    </div>
+                                    <div class="R" style="margin: 0 10px;">已选资源数量：<span class="y_text">{{selectData.count}} </span>件
+                                    </div>
+                                    <div class="R">购物车资源总数：<span class="y_text">{{dataCount}} </span>件</div>
+                                </div>
+                                <div class="clean"></div>
+                            </td>
+                            <td style="position: relative;">
+                                <div class="btn submit_btn " ng-class="{disabled:selectData.count==0}"
+                                     ng-click="goToOrders()">
+                                    <span style="color: #ffffff">结 算</span>
+                                </div>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

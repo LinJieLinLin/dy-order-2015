@@ -1,0 +1,52 @@
+.cart_head{
+    width: 100%;
+}
+.cart_body{
+    width: 100%;
+    position: relative;
+    margin: 20px 0 0 0;
+}
+.cart_T th,td{
+    text-align:center;
+
+}
+.logo{
+    float: left;
+    background-color: #FFFFFF;
+}
+.logo img{
+    height: 58px;
+    width: 222px;
+}
+.logo_text{
+    float: left;
+}
+label{
+    margin-bottom: 0;
+}
+.summit_order{
+    border: 1px solid #FF6000;
+    width: 200px;
+}
+.submit_btn{
+    background-color: #FF6000;
+    width: 100%;
+    height: 100%;
+    border-radius:0;
+    color: #ffffff;
+}
+.pay_inf{
+    padding: 20px 20px;
+    border: 1px solid #ccc ;
+    border-bottom: 2px solid #15499A;
+}
+.pay_select{
+    margin-top: 20px;
+    border: 1px solid #ccc ;
+    height: 80px;
+}
+.alipay{
+    background-color: #FF6000;
+    border-radius:0;
+    color: #ffffff;
+}

@@ -1,0 +1,34 @@
+.cart_head{
+    width: 100%;
+}
+.cart_body{
+    width: 100%;
+    position: relative;
+    margin: 20px 0 0 0;
+}
+.cart_T th,td{
+    text-align:center;
+
+}
+label{
+    margin-bottom: 0;
+}
+.submit_btn{
+    background-color: #FF6000;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+    border-radius:0;
+    color: #ffffff;
+}
+/*宝贝数量*/
+.BabyNum{width:100%;height:auto;}
+.BabyNum a{display:inline-block;width:16px;height:21px;overflow:hidden;line-height:21px;text-align:center;border:1px solid #ccc;background:#fff;vertical-align:middle;background:#ededed;min-width: 20px;}
+.BabyNum a:hover{color:#5a8800;border:1px solid #666;color:#666;text-decoration:none;background:#fff;}
+.BabyNum input{margin: 0 -4px;vertical-align:middle;height:21px;line-height:21px;border:1px solid #ccc;border-left:0;border-right:0; text-align:center;width:50px;}
+.BabyNum input:focus {
+    border: 1px solid #FF6000;
+}
+

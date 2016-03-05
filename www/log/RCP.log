@@ -1,0 +1,426 @@
+2015/08/05 23:14:46 conn.go:50: [D] db connect!--lin:123456@tcp(localhost:3306)/o?charset=utf8
+2015/08/05 23:14:47 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/05 23:14:47 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/05 23:14:55 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-00010868-af71-4156-8812-95b3292390ab
+2015/08/05 23:14:56 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-00010868-af71-4156-8812-95b3292390ab
+2015/08/05 23:14:56 sync.go:105: [I] sync user attr(c:0,d:0,u:0,add:true)
+2015/08/05 23:14:56 sync.go:50: [D] SyncMUsr
+2015/08/05 23:14:56 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/05 23:14:56 common.go:26: [D] userId--:31
+2015/08/05 23:14:56 common.go:37: [D] sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/05 23:14:56 common.go:44: [D] userName--:111
+2015/08/05 23:14:56 cartHandle.go:41: [D] 传入参数%!(EXTRA string={})
+2015/08/05 23:14:56 cartHandle.go:42: [D] 人员ID%!(EXTRA int64=31)
+2015/08/05 23:14:56 cartFunc.go:158: [E] 传入数据：%!(EXTRA int64=31, common.G_CartList={[] })
+2015/08/05 23:14:56 cartFunc.go:184: [D] select DISTINCT(FROM_URL)from o_cart WHERE USER_ID=?  and STATUS = 0  ORDER BY ID DESC 
+2015/08/05 23:15:05 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-00010868-af71-4156-8812-95b3292390ab
+2015/08/05 23:15:05 common.go:26: [D] userId--:31
+2015/08/05 23:15:05 common.go:37: [D] sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/05 23:15:05 common.go:44: [D] userName--:111
+2015/08/05 23:15:05 cartHandle.go:11: [D] AddToCart data--:[{"USER_ID":31,"GOODS_ID":1106100240,"GOODS_PRICE":10,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg","GOODS_NAME":"美美上衣","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100204","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":20}]
+2015/08/05 23:15:05 cartFunc.go:41: [I] Data:%!(EXTRA *common.O_CART=&{0 31 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 20  })
+2015/08/05 23:15:05 cartFunc.go:75: [E] sql:%!(EXTRA string=INSERT INTO o_cart (`USER_ID`, `GOODS_ID`, `GOODS_PRICE`, `GOODS_NUM`, `GOODS_IMG`, `GOODS_NAME`, `GOODS_URL`, `SHOP_ID`, `SHOP_NAME`, `SHOP_URL`, `SELLER_ID`, `SELLER_NAME`, `FROM_URL`,`STATUS`, `TIME`, `ADD1`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?), string=美美上衣)
+2015/08/05 23:15:05 cartFunc.go:115: [D] re:%!(EXTRA common.ReData={0  [21]})
+2015/08/05 23:15:05 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-00010868-af71-4156-8812-95b3292390ab
+2015/08/05 23:15:05 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-00010868-af71-4156-8812-95b3292390ab
+2015/08/05 23:15:05 common.go:26: [D] userId--:31
+2015/08/05 23:15:05 cartHandle.go:41: [D] 传入参数%!(EXTRA string={"CartId":[21]})
+2015/08/05 23:15:05 cartHandle.go:42: [D] 人员ID%!(EXTRA int64=31)
+2015/08/05 23:15:05 cartFunc.go:158: [E] 传入数据：%!(EXTRA int64=31, common.G_CartList={[21] })
+2015/08/05 23:15:05 cartFunc.go:184: [D] select DISTINCT(FROM_URL)from o_cart WHERE USER_ID=?  and ID in(0,21) and STATUS = 20  ORDER BY ID DESC 
+2015/08/05 23:15:05 cartFunc.go:208: [E] select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=? and FROM_URL = ?   and STATUS = 20  ORDER BY ID DESC
+2015/08/05 23:15:05 cartFunc.go:246: [D] goods:%!(EXTRA common.GOODS={21 31 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_143872015/08/08 12:59:20 conn.go:46: [E] connect failed: --:lin:123456@tcp(localhost:3306)/o_new?charset=utf8--:Error 1049: Unknown database 'o_new'
+2015/08/08 12:59:20 main.go:51: [E] connet db failed--:Error 1049: Unknown database 'o_new'
+2015/08/08 13:00:22 conn.go:50: [D] db connect!--lin:123456@tcp(localhost:3306)/o?charset=utf8
+2015/08/08 13:00:22 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/08 13:00:22 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/08 13:01:43 sso.go:20: [D] filter token:e10adc3949ba59abbe56e057f20f883e-a7ad471e-ac58-4a4f-bcda-b297058a86a2
+2015/08/08 13:01:43 sso.go:20: [D] filter token:e10adc3949ba59abbe56e057f20f883e-a7ad471e-ac58-4a4f-bcda-b297058a86a2
+2015/08/08 13:01:43 sync.go:105: [I] sync user attr(c:0,d:0,u:0,add:true)
+2015/08/08 13:01:43 sync.go:50: [D] SyncMUsr
+2015/08/08 13:01:43 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/08 13:01:43 common.go:58: [D] login userId is--:30
+2015/08/08 13:01:43 common.go:69: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:30
+2015/08/08 13:01:43 common.go:76: [D] login userName is--:123456
+2015/08/08 13:01:43 cartHandle.go:37: [D] GetCart input data--:{[] }
+2015/08/08 13:01:43 cartFunc.go:165: [D] GetCartF input data arg_userId--:30 arg_d--:{[] }
+2015/08/08 13:01:43 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=30)v--:{[] }
+2015/08/08 13:01:43 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:30--:%%--:0
+2015/08/08 13:01:43 cartFunc.go:198: [I] shop Data Len:--:0
+2015/08/08 13:01:50 sso.go:20: [D] filter token:e10adc3949ba59abbe56e057f20f883e-a7ad471e-ac58-4a4f-bcda-b297058a86a2
+2015/08/08 13:01:50 sso.go:20: [D] filter token:e10adc3949ba59abbe56e057f20f883e-a7ad471e-ac58-4a4f-bcda-b297058a86a2
+2015/08/08 13:01:50 common.go:58: [D] login userId is--:30
+2015/08/08 13:01:50 cartHandle.go:37: [D] GetCart input data--:{[] }
+2015/08/08 13:01:50 cartFunc.go:165: [D] GetCartF input data arg_userId--:30 arg_d--:{[] }
+2015/08/08 13:01:50 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=30)v--:{[] }
+2015/08/08 13:01:50 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:30--:%%--:0
+2015/08/08 13:01:50 cartFunc.go:198: [I] shop Data Len:--:0
+2015/08/08 13:04:33 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-2d168051-1995-4c33-91df-a5937a00945d
+2015/08/08 13:04:33 sync.go:50: [D] SyncMUsr
+2015/08/08 13:04:33 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/08 13:04:33 common.go:58: [D] login userId is--:31
+2015/08/08 13:04:33 common.go:69: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/08 13:04:33 common.go:76: [D] login userName is--:111
+2015/08/08 13:04:33 cartHandle.go:17: [D] AddToCart input data len--:1
+2015/08/08 13:04:33 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/08 13:04:33 cartFunc.go:100: [D] checkAddToCartF input data len--:1
+2015/08/08 13:04:33 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/08 13:04:33 cartFunc.go:43: [D] AddToCartByOne input data--:&{0 31 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/08 13:04:33 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/08 13:04:33 cartFunc.go:56: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100240
+2015/08/08 13:04:33 cartFunc.go:84: [D] insert Cart data sql--:INSERT INTO o_cart (`USER_ID`, `GOODS_ID`, `GOODS_PRICE`, `GOODS_NUM`, `GOODS_IMG`, `GOODS_NAME`, `GOODS_URL`, `SHOP_ID`, `SHOP_NAME`, `SHOP_URL`, `SELLER_ID`, `SELLER_NAME`, `FROM_URL`,`STATUS`, `TIME`, `ADD1`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)%!(EXTRA int64=31, int64=1106100240, float64=10, int64=1, string=http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg, string=美美上衣, string=http://localhost:8082/resCenter.html#/Res/1106100204, int64=1106100183, string=美女之家, string=http://localhost:8082/decorate/storeFirstPage.html?1106100183, int64=1111061123, string=123456, string=http://localhost:8082/api/getUrl, int64=0, string=2015-08-08 13:04:33, string=)
+2015/08/08 13:04:37 sso.go:20: [D] filter token:e10adc3949ba59abbe56e057f20f883e-a7ad471e-ac58-4a4f-bcda-b297058a86a2
+2015/08/08 13:04:37 sso.go:20: [D] authorize error:INVALID
+2015/08/08 13:05:08 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-2d168051-1995-4c33-91df-a5937a00945d
+2015/08/08 13:05:08 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-2d168051-1995-4c33-91df-a5937a00945d
+2015/08/08 13:05:08 common.go:58: [D] login userId is--:31
+2015/08/08 13:05:08 cartHandle.go:37: [D] GetCart input data--:{[] }
+2015/08/08 13:05:08 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/08 13:05:08 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/08 13:05:08 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/08 13:05:08 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/08 13:05:08 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/08 13:05:08 cartFunc.go:215: [I] Goods Data Len:--:1
+2015/08/08 13:05:08 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/08 13:05:14 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-2d168051-1995-4c33-91df-a5937a00945d
+2015/08/08 13:05:14 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-2d168051-1995-4c33-91df-a5937a00945d
+2015/08/08 13:05:14 common.go:58: [D] login userId is--:31
+2015/08/08 13:05:14 cartHandle.go:37: [D] GetCart input data--:{[] }
+2015/08/08 13:05:14 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/08 13:05:14 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/08 13:05:14 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/08 13:05:14 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/08 13:05:14 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/08 13:05:14 cartFunc.go:215: [I] Goods Data Len:--:1
+2015/08/08 13:05:14 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.2015/08/09 12:50:24 conn.go:50: [D] db connect!--lin:123456@tcp(localhost:3306)/o?charset=utf8
+2015/08/09 12:50:24 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 12:50:24 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 12:52:17 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-2d168051-1995-4c33-91df-a5937a00945d
+2015/08/09 12:52:17 sso.go:20: [D] authorize error:INVALID
+2015/08/09 12:52:24 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-cee1ea4f-f82a-4002-a4e4-52557ea80d4d
+2015/08/09 12:52:24 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-cee1ea4f-f82a-4002-a4e4-52557ea80d4d
+2015/08/09 12:52:24 sync.go:50: [D] SyncMUsr
+2015/08/09 12:52:24 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/09 12:52:24 common.go:60: [D] login userId is--:31
+2015/08/09 12:52:24 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 12:52:24 common.go:78: [D] login userName is--:111
+2015/08/09 12:52:24 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:52:24 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:52:24 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:52:24 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:52:24 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:52:24 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:52:24 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:52:24 cartFunc.go:215: [I] Goods Data Len:--:1
+2015/08/09 12:52:24 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:22 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:22 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:22 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 12:54:22 common.go:78: [D] login userName is--:111
+2015/08/09 12:54:22 cartHandle.go:17: [D] AddToCart input data len--:1
+2015/08/09 12:54:22 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 12:54:22 cartFunc.go:100: [D] checkAddToCartF input data len--:1
+2015/08/09 12:54:22 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 12:54:22 cartFunc.go:43: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 12:54:22 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 12:54:22 cartFunc.go:56: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 12:54:22 cartFunc.go:84: [D] insert Cart data sql--:INSERT INTO o_cart (`USER_ID`, `GOODS_ID`, `GOODS_PRICE`, `GOODS_NUM`, `GOODS_IMG`, `GOODS_NAME`, `GOODS_URL`, `SHOP_ID`, `SHOP_NAME`, `SHOP_URL`, `SELLER_ID`, `SELLER_NAME`, `FROM_URL`,`STATUS`, `TIME`, `ADD1`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)%!(EXTRA int64=31, int64=1106100241, float64=5, int64=1, string=http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg, string=美丽裤子, string=http://localhost:8082/resCenter.html#/Res/1106100205, int64=1106100183, string=美女之家, string=http://localhost:8082/decorate/storeFirstPage.html?1106100183, int64=1111061123, string=123456, string=http://localhost:8082/api/getUrl, int64=0, string=2015-08-09 12:54:22, string=)
+2015/08/09 12:54:24 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-cee1ea4f-f82a-4002-a4e4-52557ea80d4d
+2015/08/09 12:54:24 sso.go:20: [D] authorize error:INVALID
+2015/08/09 12:54:24 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:24 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:24 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:24 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:24 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:24 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:24 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:24 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:24 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:24 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:24 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:24 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:24 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:25 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:25 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:25 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:25 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:25 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:25 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:25 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:25 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:25 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:25 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:25 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:25 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:25 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:26 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:26 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:26 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:26 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:26 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:26 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:26 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:26 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:26 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:26 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:26 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:26 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:26 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:27 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:27 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:27 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:27 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:27 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:27 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:27 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:27 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:27 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:27 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:27 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:27 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:27 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:28 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:28 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:28 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:28 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:28 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:28 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:28 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:28 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:28 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:28 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:28 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:28 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:28 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:29 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:29 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:29 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:29 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:29 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:29 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:29 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:29 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:29 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:29 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:29 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:29 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:29 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:30 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:30 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:30 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:30 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:30 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:30 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:30 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:30 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:30 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:30 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:30 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:30 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:30 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:31 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:31 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:31 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:31 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:31 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:31 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:31 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:31 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:31 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:31 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:31 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:31 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 12:54:31 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 12:54:32 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:32 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 12:54:32 common.go:60: [D] login userId is--:31
+2015/08/09 12:54:32 cartHandle.go:31: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 12:54:32 cartHandle.go:38: [D] GetCart input data--:{[] }
+2015/08/09 12:54:32 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 12:54:32 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 12:54:32 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 12:54:32 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 12:54:32 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 12:54:32 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 12:54:32 cartFunc2015/08/09 13:30:52 conn.go:50: [D] db connect!--lin:123456@tcp(localhost:3306)/o?charset=utf8
+2015/08/09 13:30:52 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 13:30:52 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 13:30:57 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:30:57 sync.go:50: [D] SyncMUsr
+2015/08/09 13:30:57 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/09 13:30:57 common.go:60: [D] login userId is--:31
+2015/08/09 13:30:57 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:30:57 common.go:78: [D] login userName is--:111
+2015/08/09 13:30:57 cartHandle.go:32: [D] GetCart input data--:%!v(MISSING)
+2015/08/09 13:30:57 cartHandle.go:39: [D] GetCart input data--:{[] }
+2015/08/09 13:30:57 cartFunc.go:165: [D] GetCartF input data arg_userId--:31 arg_d--:{[] }
+2015/08/09 13:30:57 cartFunc.go:236: [D] checkGetCartF input data --%!:(int64=31)v--:{[] }
+2015/08/09 13:30:57 cartFunc.go:193: [D] select Shop data from o_cart sql --:select DISTINCT(SELLER_ID),SELLER_NAME,SHOP_ID,SHOP_NAME,SHOP_URL,FROM_URL from o_cart WHERE USER_ID=?
+	and FROM_URL LIKE ? and STATUS=? ORDER BY ID DESC--:31--:%%--:0
+2015/08/09 13:30:57 cartFunc.go:198: [I] shop Data Len:--:1
+2015/08/09 13:30:57 cartFunc.go:210: [D] select goods data from o_cart sql--:
+	select ID,USER_ID,SELLER_ID,GOODS_ID,GOODS_PRICE,GOODS_NUM,GOODS_IMG,GOODS_NAME,GOODS_URL,TIME from o_cart WHERE USER_ID=? and STATUS=?
+	--:31--:0
+2015/08/09 13:30:57 cartFunc.go:215: [I] Goods Data Len:--:2
+2015/08/09 13:30:57 cartFunc.go:220: [D] select goods data is--:&{22 31 1111061123 1106100240 10 1 http://localhost:8082/resImg/1106100183/1106100204_1438787457564838900_imgPre0.jpg 美美上衣 http://localhost:8082/resCenter.html#/Res/1106100204 2015-08-08 13:04:33}
+2015/08/09 13:30:57 cartFunc.go:220: [D] select goods data is--:&{23 31 1111061123 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 2015-08-09 12:54:22}
+2015/08/09 13:31:07 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:31:07 common.go:60: [D] login userId is--:31
+2015/08/09 13:31:07 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:31:07 common.go:78: [D] login userName is--:111
+2015/08/09 13:31:07 cartHandle.go:10: [D] form data:--map[data:[[{"USER_ID":31,"GOODS_ID":1106100241,"GOODS_PRICE":5,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg","GOODS_NAME":"美丽裤子","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100205","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":0}]]]
+2015/08/09 13:31:07 cartHandle.go:18: [D] AddToCart input data len--:1
+2015/08/09 13:31:07 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 13:31:07 cartFunc.go:100: [D] checkAddToCartF input data len--:1
+2015/08/09 13:31:07 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:31:07 cartFunc.go:43: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://local2015/08/09 13:49:24 conn.go:50: [D] db connect!--lin:123456@tcp(localhost:3306)/o?charset=utf8
+2015/08/09 13:49:24 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 13:49:24 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 13:50:49 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:50:49 sync.go:50: [D] SyncMUsr
+2015/08/09 13:50:49 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/09 13:50:49 common.go:60: [D] login userId is--:31
+2015/08/09 13:50:49 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:50:49 common.go:78: [D] login userName is--:111
+2015/08/09 13:50:49 cartHandle.go:10: [D] form data:--map[data:[[{"USER_ID":31,"GOODS_ID":1106100241,"GOODS_PRICE":5,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg","GOODS_NAME":"美丽裤子","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100205","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":0}]]]
+2015/08/09 13:50:49 cartHandle.go:18: [D] AddToCart input data len--:1
+2015/08/09 13:50:49 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 13:50:49 cartFunc.go:100: [D] checkAddToCartF input data len--:1
+2015/08/09 13:50:49 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:50:49 cartFunc.go:43: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:50:49 cartFunc.go:117: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:50:49 cartFunc.go:56: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:50:49 cartFunc.go:63: [D] update goods num sql--:
+	update o_cart set GOODS_PRICE=?,GOODS_NUM=GOODS_NUM+?,GOODS_IMG=? where USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:5--:1--:http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:50:49 cartFunc.go:68: [I] update num is--:2
+2015/08/09 13:50:49 cartFunc.go:84: [D] insert Cart data sql--:INSERT INTO o_cart (`USER_ID`, `GOODS_ID`, `GOODS_PRICE`, `GOODS_NUM`, `GOODS_IMG`, `GOODS_NAME`, `GOODS_URL`, `SHOP_ID`, `SHOP_NAME`, `SHOP_URL`, `SELLER_ID`, `SELLER_NAME`, `FROM_URL`,`STATUS`, `TIME`, `ADD1`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)%!(EXTRA int64=31, int64=1106100241, float64=5, int64=1, string=http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg, string=美丽裤子, string=http://localhost:8082/resCenter.html#/Res/1106100205, int64=1106100183, string=美女之家, string=http://localhost:8082/decorate/storeFirstPage.html?1106100183, int64=1111061123, string=123452015/08/09 13:58:48 conn.go:50: [D] db connect!--lin:123456@tcp(localhost:3306)/o?charset=utf8
+2015/08/09 13:58:48 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 13:58:48 sso.go:20: [D] initial AuthFilter (login:http://localhost:7700/sso/login.html?url=%s,auth:http://localhost:7700/sso/api/auth?token=%s,pre:)
+2015/08/09 13:58:53 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:58:53 sync.go:50: [D] SyncMUsr
+2015/08/09 13:58:53 sync.go:53: [D] mongo db is not init,skip sync usr
+2015/08/09 13:58:53 common.go:60: [D] login userId is--:31
+2015/08/09 13:58:53 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:58:53 common.go:78: [D] login userName is--:111
+2015/08/09 13:58:53 cartHandle.go:10: [D] form data:--map[data:[[{"USER_ID":31,"GOODS_ID":1106100241,"GOODS_PRICE":5,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg","GOODS_NAME":"美丽裤子","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100205","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":0}]]]
+2015/08/09 13:58:53 cartHandle.go:18: [D] AddToCart input data len--:1
+2015/08/09 13:58:53 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 13:58:53 cartFunc.go:105: [D] checkAddToCartF input data len--:1
+2015/08/09 13:58:53 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:58:53 cartFunc.go:46: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:58:53 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:58:53 cartFunc.go:59: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:58:53 cartFunc.go:66: [D] update goods num sql--:
+	update o_cart set GOODS_PRICE=?,GOODS_NUM=GOODS_NUM+?,GOODS_IMG=? where USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:5--:1--:http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:58:53 cartFunc.go:71: [I] update num is--:3
+2015/08/09 13:59:02 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:59:02 common.go:60: [D] login userId is--:31
+2015/08/09 13:59:02 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:59:02 common.go:78: [D] login userName is--:111
+2015/08/09 13:59:02 cartHandle.go:10: [D] form data:--map[data:[[{"USER_ID":31,"GOODS_ID":1106100241,"GOODS_PRICE":5,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg","GOODS_NAME":"美丽裤子","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100205","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":0}]]]
+2015/08/09 13:59:02 cartHandle.go:18: [D] AddToCart input data len--:1
+2015/08/09 13:59:02 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 13:59:02 cartFunc.go:105: [D] checkAddToCartF input data len--:1
+2015/08/09 13:59:02 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:02 cartFunc.go:46: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:02 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:02 cartFunc.go:59: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:59:02 cartFunc.go:66: [D] update goods num sql--:
+	update o_cart set GOODS_PRICE=?,GOODS_NUM=GOODS_NUM+?,GOODS_IMG=? where USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:5--:1--:http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:59:02 cartFunc.go:71: [I] update num is--:3
+2015/08/09 13:59:17 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:59:17 common.go:60: [D] login userId is--:31
+2015/08/09 13:59:17 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:59:17 common.go:78: [D] login userName is--:111
+2015/08/09 13:59:17 cartHandle.go:10: [D] form data:--map[data:[[{"USER_ID":31,"GOODS_ID":1106100241,"GOODS_PRICE":5,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg","GOODS_NAME":"美丽裤子","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100205","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":0}]]]
+2015/08/09 13:59:17 cartHandle.go:18: [D] AddToCart input data len--:1
+2015/08/09 13:59:17 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 13:59:17 cartFunc.go:105: [D] checkAddToCartF input data len--:1
+2015/08/09 13:59:17 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:17 cartFunc.go:46: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:17 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:17 cartFunc.go:59: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:59:17 cartFunc.go:89: [D] insert Cart data sql--:INSERT INTO o_cart (`USER_ID`, `GOODS_ID`, `GOODS_PRICE`, `GOODS_NUM`, `GOODS_IMG`, `GOODS_NAME`, `GOODS_URL`, `SHOP_ID`, `SHOP_NAME`, `SHOP_URL`, `SELLER_ID`, `SELLER_NAME`, `FROM_URL`,`STATUS`, `TIME`, `ADD1`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)%!(EXTRA int64=31, int64=1106100241, float64=5, int64=1, string=http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg, string=美丽裤子, string=http://localhost:8082/resCenter.html#/Res/1106100205, int64=1106100183, string=美女之家, string=http://localhost:8082/decorate/storeFirstPage.html?1106100183, int64=1111061123, string=123456, string=http://localhost:8082/api/getUrl, int64=0, string=2015-08-09 13:59:17, string=)
+2015/08/09 13:59:22 sso.go:20: [D] filter token:698d51a19d8a121ce581499d7b701668-bb89bcbc-3549-47e4-9c8e-2c351bf14f8e
+2015/08/09 13:59:22 common.go:60: [D] login userId is--:31
+2015/08/09 13:59:22 common.go:71: [D] get username sql--:select USR from ucs_usr where tid = ?
+	--:31
+2015/08/09 13:59:22 common.go:78: [D] login userName is--:111
+2015/08/09 13:59:22 cartHandle.go:10: [D] form data:--map[data:[[{"USER_ID":31,"GOODS_ID":1106100241,"GOODS_PRICE":5,"GOODS_NUM":1,"GOODS_IMG":"http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg","GOODS_NAME":"美丽裤子","GOODS_URL":"http://localhost:8082/resCenter.html#/Res/1106100205","SHOP_ID":1106100183,"SHOP_NAME":"美女之家","SHOP_URL":"http://localhost:8082/decorate/storeFirstPage.html?1106100183","SELLER_ID":1111061123,"SELLER_NAME":"123456","FROM_URL":"http://localhost:8082/api/getUrl","STATUS":0}]]]
+2015/08/09 13:59:22 cartHandle.go:18: [D] AddToCart input data len--:1
+2015/08/09 13:59:22 cartFunc.go:16: [D] AddToCartF input data len--:1
+2015/08/09 13:59:22 cartFunc.go:105: [D] checkAddToCartF input data len--:1
+2015/08/09 13:59:22 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:22 cartFunc.go:46: [D] AddToCartByOne input data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:22 cartFunc.go:122: [D] checkAddToCartFByOne data--:&{0 31 1106100241 5 1 http://localhost:8082/resImg/1106100183/1106100205_1439096035723252900_imgPre0.jpg 美丽裤子 http://localhost:8082/resCenter.html#/Res/1106100205 1106100183 美女之家 http://localhost:8082/decorate/storeFirstPage.html?1106100183 1111061123 123456 http://localhost:8082/api/getUrl 0  }
+2015/08/09 13:59:22 cartFunc.go:59: [D] check goods in o_cart,sql--:
+	SELECT COUNT(ID) FROM o_cart WHERE USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:31--:http://localhost:8082/api/getUrl--:1106100241
+2015/08/09 13:59:22 cartFunc.go:66: [D] update goods num sql--:
+	update o_cart set GOODS_PRICE=?,GOODS_NUM=GOODS_NUM+?,GOODS_IMG=? where USER_ID = ? and FROM_URL = ? and GOODS_ID = ? and STATUS = 0
+	--:5--:1--:http://localhost:8082/resImg/1106100183/1106100205_143909

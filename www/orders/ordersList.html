@@ -1,0 +1,186 @@
+<div ng-controller="ordersListCtrl">
+    <div class="list">
+        <div class="list_head" style="">
+            <div class="o_name">资源名称</div>
+            <div class="o_price">单价</div>
+            <div class="o_count"> 数量</div>
+            <div class="o_sell">售后</div>
+            <div class="o_order_price">订单金额</div>
+            <div class="o_status">交易状态</div>
+            <div class="o_order">订单操作</div>
+            <div class="clean"></div>
+        </div>
+        <div class="list_body">
+            <div class="paging">
+                <div class="L pageBtn" ng-click="changePage(-1)">上一页</div>
+                <div class="L pageBtn">{{page.pageNum}}</div>
+                <div class="L pageBtn" ng-click="changePage(1)">下一页</div>
+                <div class="L pageBtn">共{{page.pageSum}}页</div>
+                <div class="clean"></div>
+            </div>
+            <div ng-repeat="orders in ordersList" class="order_list">
+                <div style="background-color: #EDF4FF;padding: 10px;">
+                    <div class="L" style="margin-right: 10px;">订单号：{{orders.ordersNo}}</div>
+                    <div class="L" style="margin-right: 10px;">成交时间：{{orders.createTime}}</div>
+                    <div class="L" style="margin-right: 10px;"><a class="" ng-href="{{orders.shopUrl}}" target="_blank">{{orders.shopName}}</a></div>
+                    <div class="L" style="margin-right: 10px;">{{orders.sellerName}}</div>
+                    <div class="R" style="margin-left: 10px;" data-ng-if="orders.fromUrlName">
+                        <span class="">来源：</span>
+                        <a ng-href="{{orders.fromUrl}}" target="_blank" class="">{{orders.fromUrlName}}</a>
+                    </div>
+                    <div class="clean"></div>
+                </div>
+                <div>
+                    <div style="float: left;width: 60%;">
+                        <div ng-repeat="goods in orders.goods" style="border-bottom: 0 solid #ccc;border-right: 0 solid #ccc;padding: 10px 0;">
+                            <div class="o_name" style="width: 70%;">
+                                <div class="L goods_img">
+                                    <a ng-href="{{goods.goodsUrl}}" target="_blank"><img
+                                            ng-src="{{goods.goodsImg}}"/></a>
+                                </div>
+                                <div class="L">
+                                    <a ng-href="{{goods.goodsUrl}}" target="_blank">{{goods.goodsName}}</a>
+                                </div>
+                                <div class="clean"></div>
+                            </div>
+                            <div class="o_price"  style="width: 15%;">
+                                <div>
+                                    {{goods.goodsPrice| currency:'￥'}}
+                                </div>
+                            </div>
+                            <div class="o_count" style="width: 15%;">
+                                <div>
+                                    {{goods.goodsNum}}
+                                </div>
+                            </div>
+                            <div class="clean"></div>
+                        </div>
+                    </div>
+                    <div class="o_sell" style="padding: 10px 0;">
+                        申请退款
+                    </div>
+                    <div class="o_order_price" style="padding: 10px 0;">
+                        {{orders.price| currency:'￥'}}
+                    </div>
+                    <div class="o_status" style="padding: 10px 0;">
+                        <span ng-if="orders.status==0">未付款</span>
+                        <span ng-if="orders.status==10">已付款</span>
+                        <span ng-if="orders.status==20">交易完成</span>
+                        <span ng-if="orders.status==30">交易关闭</span>
+                        <span ng-if="orders.status==70">免费订单</span>
+                    </div>
+                    <div class="o_order" style="padding: 10px 0;">
+                        评价
+                    </div>
+                    <div class="clean"></div>
+                </div>
+
+            </div>
+            <div class="paging">
+                <div class="L pageBtn" ng-click="changePage(-1)">上一页</div>
+                <div class="L pageBtn">{{page.pageNum}}</div>
+                <div class="L pageBtn" ng-click="changePage(1)">下一页</div>
+                <div class="L pageBtn">共{{page.pageSum}}页</div>
+                <div class="clean"></div>
+            </div>
+        </div>
+        <div class="list_footer">
+        </div>
+    </div>
+</div>
+<style>
+    .list {
+        width: 100%;
+    }
+
+    .list_head {
+        width: 100%;
+        border-bottom: 2px solid #15499A;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .list_body {
+        width: 100%;
+    }
+
+    .paging {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .L {
+        float: left;
+    }
+
+    .R {
+        float: right;
+    }
+
+    .clean {
+        clear: both;
+    }
+
+    .pageBtn {
+        border: 1px solid #c8c8c8;
+        background: #fff;
+        display: inline-block;
+        margin: 5px 2px;
+        line-height: 23px;
+        padding: 0 5px;
+    }
+
+    .o_name {
+        float: left;
+        width: 42%;
+        text-align: center;
+    }
+
+    .o_price {
+        float: left;
+        width: 9%;
+        text-align: center;
+
+    }
+
+    .o_count {
+        float: left;
+        width: 9%;
+        text-align: center;
+
+    }
+
+    .o_sell {
+        float: left;
+        width: 10%;
+        visibility: hidden;
+        text-align: center;
+
+    }
+
+    .o_order_price {
+        float: left;
+        width: 10%;
+        text-align: center;
+
+    }
+
+    .o_status {
+        float: left;
+        width: 10%;
+        text-align: center;
+
+    }
+
+    .o_order {
+        float: left;
+        width: 10%;
+        visibility: hidden;
+        text-align: center;
+
+    }
+    .order_list{
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+</style>
